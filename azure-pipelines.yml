@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'windows-latest'
 
 variables:
   solution: 'windows/*.sln'
@@ -25,6 +25,10 @@ steps:
     Path: '$(Build.SourcesDirectory)'
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
+
+- task: ChocoInstallPackage@1
+  inputs:
+    packageId: 'visualstudio2017buildtools'
 
 - task: CmdLine@2
   inputs:
