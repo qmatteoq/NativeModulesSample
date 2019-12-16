@@ -26,6 +26,10 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
 
+- task: CmdLine@2
+  inputs:
+    script: 'yarn install'
+
 - task: VSBuild@1
   inputs:
     platform: '$(buildPlatform)'
