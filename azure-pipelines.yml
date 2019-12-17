@@ -25,10 +25,6 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
 
-- task: ChocoInstallPackage@1
-  inputs:
-    packageId: 'visualcpp-build-tools'
-
 - task: CmdLine@2
   inputs:
     script: 'yarn install'
