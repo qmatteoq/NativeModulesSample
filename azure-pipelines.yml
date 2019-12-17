@@ -6,11 +6,10 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-latest'
+pool: Default
 
 variables:
-  solution: 'windows/*.sln'
+  solution: 'windows/NativeModulesSample.sln'
   buildPlatform: 'x64'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
@@ -26,10 +25,6 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
 
-- task: ChocoInstallPackage@1
-  inputs:
-    packageId: 'visualcpp-build-tools'
-
 - task: CmdLine@2
   inputs:
     script: 'yarn install'
@@ -42,12 +37,15 @@ steps:
 
 - task: VSBuild@1
   inputs:
-    platform: '$(buildPlatform)'
     solution: '$(solution)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
+    platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArgs: '/restore /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
+    msbuildArchitecture: 'x64'
+    createLogFile: true
+    logFileVerbosity: 'detailed'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)\AppxPackages'
+    PathtoPublish: '$(appxPackageDir)'
     ArtifactName: 'drop'
