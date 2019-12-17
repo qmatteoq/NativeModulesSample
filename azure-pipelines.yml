@@ -26,6 +26,12 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
 
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+
 - task: ChocoInstallPackage@1
   inputs:
     packageId: 'windows-sdk-10-version-1903-all'
