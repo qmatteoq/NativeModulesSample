@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'windows-latest'
 
 variables:
   solution: 'windows/*.sln'
@@ -28,7 +28,7 @@ steps:
 
 - task: ChocoInstallPackage@1
   inputs:
-    packageId: 'windows-sdk-10-version-1903-all'
+    packageId: 'visualcpp-build-tools'
 
 - task: CmdLine@2
   inputs:
