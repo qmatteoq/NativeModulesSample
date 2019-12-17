@@ -33,9 +33,6 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'yarn install'
-- task: NuGetCommand@2
-  inputs:
-    command: 'restore'
 
 - task: NuGetCommand@2
   inputs:
