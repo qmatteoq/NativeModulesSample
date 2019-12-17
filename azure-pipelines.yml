@@ -9,7 +9,7 @@ trigger:
 pool: Default
 
 variables:
-  solution: 'windows/*.sln'
+  solution: '**/*.sln'
   buildPlatform: 'x64'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
