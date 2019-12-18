@@ -27,11 +27,11 @@ steps:
 
 - script: 'yarn install'
 
-# - task: NuGetCommand@2
-#   inputs:
-#     command: 'restore'
-#     restoreSolution: 'windows/*.sln'
-#     feedsToUse: 'select'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: 'windows/*.sln'
+    feedsToUse: 'select'
 
 - task: VSBuild@1
   inputs:
