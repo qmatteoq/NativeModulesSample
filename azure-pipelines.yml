@@ -25,9 +25,7 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
 
-- task: CmdLine@2
-  inputs:
-    script: 'yarn install'
+- script: 'yarn install'
 
 - task: NuGetCommand@2
   inputs:
@@ -38,12 +36,9 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Never /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
-    createLogFile: true
-    logFileVerbosity: 'detailed'
 
 - task: PublishBuildArtifacts@1
   inputs:
