@@ -27,11 +27,11 @@ steps:
 
 - script: 'yarn install'
 
-- task: NuGetCommand@2
-  inputs:
-    command: 'restore'
-    restoreSolution: 'windows/*.sln'
-    feedsToUse: 'select'
+# - task: NuGetCommand@2
+#   inputs:
+#     command: 'restore'
+#     restoreSolution: 'windows/*.sln'
+#     feedsToUse: 'select'
 
 - task: VSBuild@1
   inputs:
@@ -39,9 +39,7 @@ steps:
     msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxPackageSigningEnabled=false'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArchitecture: 'x64'
-    createLogFile: true
-    logFileVerbosity: 'detailed'
+    restoreNugetPackages: true
 
 - task: PublishBuildArtifacts@1
   inputs:
