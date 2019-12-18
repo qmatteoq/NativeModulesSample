@@ -353,4 +353,3 @@ MigrationBackup/
 .ionide/
 /android/app/build
 /android/.gradle
-/windows/NativeModulesSample/Bundle
