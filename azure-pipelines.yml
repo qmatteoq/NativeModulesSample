@@ -6,7 +6,9 @@
 trigger:
 - master
 
-pool: Default
+# pool: Default
+pool:
+    vmImage: 'windows-latest'
 
 variables:
   solution: 'windows/NativeModulesSample.sln'
@@ -17,6 +19,12 @@ variables:
 name: $(date:yyyy).$(Month)$(rev:.r).0
 
 steps:
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'vs_Enterprise.exe'
+
+- script: 'vs_Enterprise.exe modify --add Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141.BuildTools --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Common7\IDE" --quiet'
 
 - task: VersionAPPX@2
   displayName: 'Version MSIX'
