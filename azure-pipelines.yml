@@ -25,7 +25,7 @@ steps:
   inputs:
     secureFile: 'vs_Enterprise.exe'
 
-- script: '$(mySecureFile.vsEnterprise) modify --add Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141.BuildTools --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Common7\IDE" --quiet'
+- script: '$(vsEnterprise.secureFilePath) modify --add Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141.BuildTools --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Common7\IDE" --quiet'
 
 - task: VersionAPPX@2
   displayName: 'Version MSIX'
