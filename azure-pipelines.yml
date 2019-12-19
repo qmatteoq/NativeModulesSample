@@ -36,6 +36,8 @@ steps:
 
 - script: 'yarn install'
 
+- script: 'yarn global add react-native-cli'
+
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
