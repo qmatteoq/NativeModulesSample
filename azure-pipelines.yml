@@ -38,6 +38,18 @@ steps:
     script: |
       $startInfo = New-Object System.Diagnostics.ProcessStartInfo
       $startInfo.FileName = '$(vsEnterprise.secureFilePath)'
+      $startInfo.Arguments = '--quiet --update'
+      $process = New-Object System.Diagnostics.Process
+      $process.StartInfo = $startInfo
+      $process.Start()
+      $process.WaitForExit()
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $startInfo = New-Object System.Diagnostics.ProcessStartInfo
+      $startInfo.FileName = '$(vsEnterprise.secureFilePath)'
       $startInfo.Arguments = 'modify --add Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141.BuildTools --add Microsoft.VisualStudio.Component.VC.v141.x86.x64 --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\" --quiet --norestart'
       $process = New-Object System.Diagnostics.Process
       $process.StartInfo = $startInfo
