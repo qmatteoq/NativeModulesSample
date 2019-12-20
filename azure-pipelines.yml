@@ -6,7 +6,9 @@
 trigger:
 - master
 
-pool: Default
+# pool: Default
+pool:
+    vmImage: 'vs2017-win2016'
 
 variables:
   solution: 'windows/NativeModulesSample.sln'
@@ -18,14 +20,22 @@ name: $(date:yyyy).$(Month)$(rev:.r).0
 
 steps:
 
+- task: UseNode@1
+  inputs:
+    version: '12.9.1'
+
+- script: choco install windows-sdk-10-version-1903-all
+- script: yarn install
+- script: npm config set prefix C:\Users\VssAdministrator\AppData\Roaming\npm
+- script: npm install -g react-native-cli
+
+
 - task: VersionAPPX@2
   displayName: 'Version MSIX'
   inputs:
     Path: '$(Build.SourcesDirectory)'
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
-
-- script: 'yarn install'
 
 - task: NuGetCommand@2
   inputs:
