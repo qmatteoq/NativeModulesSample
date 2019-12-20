@@ -45,7 +45,7 @@ steps:
     
       [xml]$XmlFile= Get-Content $filePath
       $node = $XmlFile.CreateNode("element", "LangVersion", "http://schemas.microsoft.com/developer/msbuild/2003")
-      $node.InnerText = "7.1"
+      $node.InnerText = "7.2"
       $XmlFile.ChildNodes[1].ChildNodes[0].AppendChild($node)
       $XmlFile.Save($filePath)
 
