@@ -6,12 +6,10 @@
 trigger:
 - master 
 
-# pool: Default
-pool:
-    vmImage: 'vs2017-win2016'
+pool: Default
 
 variables:
-  solution: 'windows/NativeModulesSample.sln'
+  solution: 'windows/*.sln'
   buildPlatform: 'x64'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
@@ -27,58 +25,9 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     InjectVersion: true
 
-- task: DownloadSecureFile@1
-  name: 'vsEnterprise'
-  inputs:
-    secureFile: 'vs_Enterprise.exe'
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      $startInfo = New-Object System.Diagnostics.ProcessStartInfo
-      $startInfo.FileName = '$(vsEnterprise.secureFilePath)'
-      $startInfo.Arguments = '--quiet --update'
-      $process = New-Object System.Diagnostics.Process
-      $process.StartInfo = $startInfo
-      $process.Start()
-      $process.WaitForExit()
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      $startInfo = New-Object System.Diagnostics.ProcessStartInfo
-      $startInfo.FileName = '$(vsEnterprise.secureFilePath)'
-      $startInfo.Arguments = 'modify --add Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141.BuildTools --add Microsoft.VisualStudio.Component.VC.v141.x86.x64 --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\" --quiet --norestart'
-      $process = New-Object System.Diagnostics.Process
-      $process.StartInfo = $startInfo
-      $process.Start()
-      $process.WaitForExit()
-
-- task: UseNode@1
-  inputs:
-    version: '12.9.1'
-
 - script: yarn install
-- script: npm config set prefix C:\Users\VssAdministrator\AppData\Roaming\npm
-- script: npm install -g react-native-cli
-- script: mkdir .\windows\NavigationSample\Bundle
-- script: react-native bundle --platform windows --entry-file index.js --bundle-output windows/NavigationSample/Bundle/index.windows.bundle --assets-dest windows/NavigationSample/Bundle
-
-# - task: PowerShell@2
-#   inputs:
-#     targetType: 'inline'
-#     script: |
-#       $currentFolder = Get-Location
-#       $filePath = "$($currentFolder)/node_modules/react-native-windows/Microsoft.ReactNative.SharedManaged/Microsoft.ReactNative.SharedManaged.shproj"
-    
-#       [xml]$XmlFile= Get-Content $filePath
-#       $node = $XmlFile.CreateNode("element", "LangVersion", "http://schemas.microsoft.com/developer/msbuild/2003")
-#       $node.InnerText = "7.2"
-#       $XmlFile.ChildNodes[1].ChildNodes[0].AppendChild($node)
-#       $XmlFile.Save($filePath)
-
+- script: mkdir .\windows\NativeModulesSample\Bundle
+- script: react-native bundle --platform windows --entry-file index.js --bundle-output windows/NativeModulesSample/Bundle/index.windows.bundle --assets-dest windows/NativeModulesSample/Bundle
 
 - task: NuGetCommand@2
   inputs:
