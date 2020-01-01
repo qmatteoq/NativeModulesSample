@@ -26,9 +26,6 @@ steps:
     InjectVersion: true
 
 - script: yarn install
-- script: rmdir /Q /S .\windows\NativeModulesSample\Bundle
-- script: mkdir .\windows\NativeModulesSample\Bundle
-- script: react-native bundle --platform windows --entry-file index.js --bundle-output windows/NativeModulesSample/Bundle/index.windows.bundle --assets-dest windows/NativeModulesSample/Bundle
 
 - task: NuGetCommand@2
   inputs:
