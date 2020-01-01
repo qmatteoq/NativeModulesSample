@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeModulesSample", "NativeModulesSample\NativeModulesSample.vcxproj", "{611CE7AB-AA12-4B13-9976-2E65717A03CC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeModulesSample", "NativeModulesSample\NativeModulesSample.vcxproj", "{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F7D32BD0-2749-483E-9A0D-1635EF7E3136} = {F7D32BD0-2749-483E-9A0D-1635EF7E3136}
 	EndProjectSection
@@ -48,12 +48,15 @@ Global
 		..\node_modules\react-native-windows\JSI\Shared\JSI.Shared.vcxitems*{0cc28589-39e4-4288-b162-97b959f8b843}*SharedItemsImports = 9
 		..\node_modules\react-native-windows\Chakra\Chakra.vcxitems*{2d5d43d9-cffc-4c40-b4cd-02efb4e2742b}*SharedItemsImports = 4
 		..\node_modules\react-native-windows\Shared\Shared.vcxitems*{2d5d43d9-cffc-4c40-b4cd-02efb4e2742b}*SharedItemsImports = 4
-		..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems*{611ce7ab-aa12-4b13-9976-2e65717a03cc}*SharedItemsImports = 4
 		..\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems*{66897443-780e-4d39-a458-ec8dcf1d1705}*SharedItemsImports = 4
 		..\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems*{67a1076f-7790-4203-86ea-4402ccb5e782}*SharedItemsImports = 13
+		..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems*{67d6ff2e-55fa-492d-bc0d-02c22add2ed9}*SharedItemsImports = 4
 		..\node_modules\react-native-windows\JSI\Shared\JSI.Shared.vcxitems*{a62d504a-16b8-41d2-9f19-e2e86019e5e4}*SharedItemsImports = 4
 		..\node_modules\react-native-windows\Chakra\Chakra.vcxitems*{c38970c0-5fbf-4d69-90d8-cbac225ae895}*SharedItemsImports = 9
 		..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems*{da8b35b3-da00-4b02-bde6-6a397b3fd46b}*SharedItemsImports = 9
+		..\node_modules\react-native-windows\Chakra\Chakra.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
+		..\node_modules\react-native-windows\JSI\Shared\JSI.Shared.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
+		..\node_modules\react-native-windows\Shared\Shared.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,28 +71,28 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|ARM.ActiveCfg = Debug|ARM
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|ARM.Build.0 = Debug|ARM
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|ARM.Deploy.0 = Debug|ARM
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|ARM64.ActiveCfg = Debug|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|x64.ActiveCfg = Debug|x64
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|x64.Build.0 = Debug|x64
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|x64.Deploy.0 = Debug|x64
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|x86.ActiveCfg = Debug|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|x86.Build.0 = Debug|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Debug|x86.Deploy.0 = Debug|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|Any CPU.ActiveCfg = Release|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|ARM.ActiveCfg = Release|ARM
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|ARM.Build.0 = Release|ARM
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|ARM.Deploy.0 = Release|ARM
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|ARM64.ActiveCfg = Release|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|x64.ActiveCfg = Release|x64
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|x64.Build.0 = Release|x64
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|x64.Deploy.0 = Release|x64
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|x86.ActiveCfg = Release|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|x86.Build.0 = Release|Win32
-		{611CE7AB-AA12-4B13-9976-2E65717A03CC}.Release|x86.Deploy.0 = Release|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|ARM.Build.0 = Debug|ARM
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|x64.ActiveCfg = Debug|x64
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|x64.Build.0 = Debug|x64
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|x64.Deploy.0 = Debug|x64
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|x86.ActiveCfg = Debug|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|x86.Build.0 = Debug|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Debug|x86.Deploy.0 = Debug|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|Any CPU.ActiveCfg = Release|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|ARM.ActiveCfg = Release|ARM
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|ARM.Build.0 = Release|ARM
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|ARM.Deploy.0 = Release|ARM
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|ARM64.ActiveCfg = Release|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|x64.ActiveCfg = Release|x64
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|x64.Build.0 = Release|x64
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|x64.Deploy.0 = Release|x64
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|x86.ActiveCfg = Release|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|x86.Build.0 = Release|Win32
+		{67D6FF2E-55FA-492D-BC0D-02C22ADD2ED9}.Release|x86.Deploy.0 = Release|Win32
 		{A990658C-CE31-4BCC-976F-0FC6B1AF693D}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{A990658C-CE31-4BCC-976F-0FC6B1AF693D}.Debug|ARM.ActiveCfg = Debug|ARM
 		{A990658C-CE31-4BCC-976F-0FC6B1AF693D}.Debug|ARM.Build.0 = Debug|ARM

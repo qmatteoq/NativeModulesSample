@@ -5,7 +5,7 @@
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{611ce7ab-aa12-4b13-9976-2e65717a03cc}</ProjectGuid>
+    <ProjectGuid>{67d6ff2e-55fa-492d-bc0d-02c22add2ed9}</ProjectGuid>
     <ProjectName>NativeModulesSample</ProjectName>
     <RootNamespace>NativeModulesSample</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>

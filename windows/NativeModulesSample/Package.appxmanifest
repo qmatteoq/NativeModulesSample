@@ -11,10 +11,10 @@
     Publisher="CN=Matteo Pagani, O=Matteo Pagani, L=Como, S=Como, C=IT"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="889ada6e-d7a3-4468-9c26-749831527362" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="2cd8fe47-c28f-481c-b5db-0810bb9c1009" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>React Native module</DisplayName>
+    <DisplayName>NativeModulesSample</DisplayName>
     <PublisherDisplayName>Matteo Pagani</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
