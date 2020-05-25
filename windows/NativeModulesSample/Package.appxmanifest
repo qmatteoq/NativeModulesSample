@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
  <Identity
-    Name="NativeModuleSample"
-    Publisher="CN=Matteo Pagani, O=Matteo Pagani, L=Como, S=Como, C=IT"
+    Name="14f4793a-c8bd-47aa-a0ae-e7a67b30b31e"
+    Publisher="CN=mpagani"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="2cd8fe47-c28f-481c-b5db-0810bb9c1009" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="14f4793a-c8bd-47aa-a0ae-e7a67b30b31e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>NativeModulesSample</DisplayName>
-    <PublisherDisplayName>Matteo Pagani</PublisherDisplayName>
+    <PublisherDisplayName>mpagani</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

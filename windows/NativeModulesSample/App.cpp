@@ -2,7 +2,6 @@
 
 #include "App.h"
 #include "ReactPackageProvider.h"
-#include "winrt/SampleReactModule.h"
 
 
 
@@ -21,11 +20,11 @@ App::App() noexcept
 #if BUNDLE
     JavaScriptBundleFile(L"index.windows");
     InstanceSettings().UseWebDebugger(false);
-    InstanceSettings().UseLiveReload(false);
+    InstanceSettings().UseFastRefresh(false);
 #else
     JavaScriptMainModuleName(L"index");
     InstanceSettings().UseWebDebugger(true);
-    InstanceSettings().UseLiveReload(true);
+    InstanceSettings().UseFastRefresh(true);
 #endif
 
 #if _DEBUG
@@ -36,6 +35,8 @@ App::App() noexcept
 
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
     PackageProviders().Append(winrt::SampleReactModule::ReactPackageProvider());
+
+    REACT_REGISTER_NATIVE_MODULE_PACKAGES(); //code-gen macro from autolink
 
     InitializeComponent();
 
